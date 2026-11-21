@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moonlit Vault — a museum stealth game</title>
+<link rel="stylesheet" href="css/museum.css">
+</head>
+<body>
+<div id="stage">
+  <div id="hud">
+    <span id="hud-level">Gallery 1</span>
+    <span id="hud-objective"></span>
+    <span id="hud-eye" title="The nearest guard's suspicion">
+      <span id="hud-eye-fill"></span>
+    </span>
+    <span id="hud-loot">Loot 0/0</span>
+    <span id="hud-score">Score 0</span>
+  </div>
+  <div id="canvas-wrap">
+    <canvas id="game" width="960" height="600"></canvas>
+    <div id="flash"></div>
+    <div id="screen">
+      <h1 id="screen-title"></h1>
+      <p id="screen-body"></p>
+      <button id="screen-button" type="button"></button>
+      <p class="hint">WASD / arrows to move · Shift to sneak · R restarts a gallery · M mutes</p>
+    </div>
+  </div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

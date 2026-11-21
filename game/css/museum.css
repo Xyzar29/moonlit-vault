@@ -1,0 +1,163 @@
+/* Moonlit Vault — page and HUD styling. A dark gallery wall around the game:
+   a slim brass-and-ink bar on top (gallery name, objective, the suspicion
+   eye, loot and score), the canvas beneath it, and overlay screens for the
+   title, a clear and the end of the night. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #0b0e18;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #e8e4d8;
+}
+
+#stage {
+  width: 960px;
+  margin-top: 10px;
+}
+
+#hud {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 38px;
+  padding: 0 12px;
+  background: #171a26;
+  border: 1px solid #3a4157;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#hud-level {
+  font-weight: 700;
+  color: #f5c542;
+}
+
+#hud-objective {
+  flex: 1;
+  color: #b9c0d4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#hud-eye {
+  width: 110px;
+  height: 10px;
+  border: 1px solid #565e78;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #0b0e18;
+}
+
+#hud-eye-fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #ffd76a;
+  transition: width 120ms linear;
+}
+
+#hud-eye.danger {
+  border-color: #ff5040;
+  box-shadow: 0 0 8px rgba(255, 80, 64, 0.7);
+}
+
+#canvas-wrap {
+  position: relative;
+  width: 960px;
+  height: 600px;
+}
+
+canvas#game {
+  display: block;
+  width: 960px;
+  height: 600px;
+  background: #2b3040;
+  border: 1px solid #3a4157;
+  border-radius: 0 0 8px 8px;
+}
+
+#flash {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #ff5040;
+  text-shadow: 0 0 24px rgba(255, 80, 64, 0.8), 0 2px 0 #000;
+  background: rgba(60, 4, 4, 0.35);
+  pointer-events: none;
+}
+
+#flash.visible {
+  display: flex;
+}
+
+#screen {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  background: rgba(5, 8, 18, 0.78);
+  border-radius: 0 0 8px 8px;
+  padding: 24px;
+}
+
+#screen.visible {
+  display: flex;
+}
+
+#screen-title {
+  margin: 0;
+  font-size: 44px;
+  letter-spacing: 3px;
+  color: #f5c542;
+  text-shadow: 0 0 18px rgba(245, 197, 66, 0.35);
+}
+
+#screen-body {
+  margin: 0;
+  max-width: 620px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #dfe3ee;
+}
+
+#screen-button {
+  font: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 10px 26px;
+  color: #06281a;
+  background: #2ecc8a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#screen-button:hover {
+  background: #43e09b;
+}
+
+#screen .hint {
+  margin: 0;
+  font-size: 12px;
+  color: #8b93a9;
+}
